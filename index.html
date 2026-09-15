@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 2 Years, My Love ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe5f0 25%, #fff5f8 50%, #ffe5f0 75%, #ffeef8 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #5a4a52;
+            line-height: 1.8;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts background */
+        .heart-bg {
+            position: fixed;
+            font-size: 2rem;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart-bg:nth-child(1) { top: 5%; left: 8%; animation: float 6s ease-in-out infinite; }
+        .heart-bg:nth-child(2) { top: 15%; right: 10%; animation: float 7s ease-in-out infinite; }
+        .heart-bg:nth-child(3) { top: 30%; left: 5%; animation: float 8s ease-in-out infinite; }
+        .heart-bg:nth-child(4) { top: 50%; right: 8%; animation: float 6.5s ease-in-out infinite; }
+        .heart-bg:nth-child(5) { top: 65%; left: 10%; animation: float 7.5s ease-in-out infinite; }
+        .heart-bg:nth-child(6) { top: 75%; right: 12%; animation: float 8.5s ease-in-out infinite; }
+        .heart-bg:nth-child(7) { top: 20%; left: 85%; animation: float 7s ease-in-out infinite; }
+        .heart-bg:nth-child(8) { top: 60%; right: 5%; animation: float 6.8s ease-in-out infinite; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Top message */
+        .intro {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: #d4556a;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        /* Main title */
+        .main-title {
+            text-align: center;
+            margin: 60px 0;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+
+        .main-title h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #c41e3a;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        /* Letter card */
+        .letter-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px 35px;
+            box-shadow: 0 20px 60px rgba(196, 30, 58, 0.15);
+            backdrop-filter: blur(10px);
+            margin: 50px 0;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.5s;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+        }
+
+        .letter-content {
+            font-size: 1.05rem;
+            color: #5a4a52;
+            line-height: 2;
+        }
+
+        .letter-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .letter-content strong {
+            color: #c41e3a;
+            font-weight: 600;
+        }
+
+        /* Heart accents in letter */
+        .heart-accent {
+            color: #ff6b9d;
+            margin: 0 3px;
+        }
+
+        /* Closing section */
+        .closing-section {
+            text-align: center;
+            margin: 80px 0 60px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.7s;
+        }
+
+        .closing-message {
+            font-size: 1.4rem;
+            color: #c41e3a;
+            margin-bottom: 40px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .closing-message .heart {
+            color: #ff6b9d;
+            display: inline;
+        }
+
+        .signature {
+            font-size: 1.15rem;
+            color: #d4556a;
+            font-weight: 500;
+            margin-top: 50px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Story section */
+        .story-section {
+            text-align: center;
+            margin: 80px 0;
+            padding: 40px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 0.9s;
+        }
+
+        .story-line {
+            font-size: 1.3rem;
+            color: #c41e3a;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .story-subline {
+            font-size: 1.15rem;
+            color: #d4556a;
+            font-weight: 400;
+        }
+
+        /* Decorative elements */
+        .decoration {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 40px 0;
+            opacity: 0.4;
+        }
+
+        /* End message */
+        .end-message {
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 1.1s;
+        }
+
+        .end-message p {
+            font-size: 1rem;
+            color: #8a7a82;
+            margin-bottom: 30px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .main-title h1 {
+                font-size: 2.2rem;
+            }
+
+            .letter-card {
+                padding: 30px 20px;
+                margin: 30px 0;
+            }
+
+            .letter-content {
+                font-size: 1rem;
+                line-height: 1.8;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+            }
+
+            .closing-message {
+                font-size: 1.2rem;
+            }
+
+            .story-line {
+                font-size: 1.1rem;
+            }
+
+            .heart-bg {
+                font-size: 1.5rem;
+            }
+
+            .intro {
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+
+            .main-title {
+                margin: 40px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title h1 {
+                font-size: 1.8rem;
+            }
+
+            .letter-card {
+                padding: 20px 15px;
+                border-radius: 15px;
+            }
+
+            .letter-content {
+                font-size: 0.95rem;
+            }
+
+            .closing-message {
+                font-size: 1.1rem;
+            }
+
+            .story-line {
+                font-size: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating background hearts -->
+    <div class="heart-bg">❤️</div>
+    <div class="heart-bg">❤️</div>
+    <div class="heart-bg">❤️</div>
+    <div class="heart-bg">❤️</div>
+    <div class="heart-bg">❤️</div>
+    <div class="heart-bg">❤️</div>
+    <div class="heart-bg">❤️</div>
+    <div class="heart-bg">❤️</div>
+
+    <div class="container">
+        <!-- Intro -->
+        <div class="intro">
+            <p class="intro-text">730 days. Countless memories. One story.</p>
+        </div>
+
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Happy 2 Years, My Love <span class="heart-accent">❤️</span></h1>
+        </div>
+
+        <!-- Letter -->
+        <div class="letter-card">
+            <div class="letter-content">
+                <p>Two years. When I look back at everything we've been through, I realize that our story was never about having a perfect relationship. We've had beautiful moments, difficult moments, arguments, misunderstandings, moments where things felt heavy, and moments where we probably wondered if we would make it this far.</p>
+
+                <p>But somehow, through all of it, we kept finding our way back to each other.</p>
+
+                <p>I think that's what makes these two years so meaningful to me. Not that everything has always been easy, but that despite the hard days, we've continued to choose each other. We've grown, learned, hurt, forgiven, laughed, made memories, and kept moving forward together.</p>
+
+                <p>I wouldn't trade the story we've written so far for one that was perfect, because every high and every low has become part of what made us who we are today.</p>
+
+                <p>Two years later, I'm still choosing you.<br>
+                And if there's one thing I hope these two years have taught us, it's that love isn't about never falling apart. Sometimes it's about finding the courage to put the pieces back together, grow from what broke us, and keep building something worth holding onto.</p>
+
+                <p>Thank you for every memory, every laugh, every conversation, every difficult night, every beautiful day, and every moment in between.</p>
+
+                <p><strong>Two years down. I'd choose you again. <span class="heart-accent">❤️</span></strong></p>
+            </div>
+        </div>
+
+        <!-- Story section -->
+        <div class="story-section">
+            <p class="story-line">Our story isn't perfect.</p>
+            <p class="story-subline">It's ours.</p>
+            <div class="decoration">✦ ✦ ✦</div>
+            <p class="story-subline">And that's what makes it beautiful.</p>
+        </div>
+
+        <!-- Closing -->
+        <div class="closing-section">
+            <p class="closing-message">Through every high, every low, every version of us...<br>
+            I'd still choose you. <span class="heart">❤️</span></p>
+            <p class="signature">Happy 2nd Anniversary, Shawtie.<br>
+            Here's to whatever comes next. <span class="heart">❤️</span></p>
+        </div>
+
+        <!-- End message -->
+        <div class="end-message">
+            <p>━━━━━━━━━━━━━━━━━</p>
+            <p>Made with love, just for you.</p>
+        </div>
+    </div>
+</body>
+</html>
